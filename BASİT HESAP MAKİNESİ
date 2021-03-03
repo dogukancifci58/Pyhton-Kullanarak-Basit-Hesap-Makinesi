@@ -1,0 +1,315 @@
+import math
+import time
+print("""             *********HESAP MAKİNESİ**********
+HER İŞLEMDEN SONRA TEKAR BAŞLATINIZ
+ÇIKMAK İÇİN 'q' ya basınız.
+Kullanılabilir Fonksiyonlar:
+    Trigonometrik Fonksiyonlar:
+        1- Cosinüs Fonksiyonu
+        2- Sinüs Fonksiyonu
+        3- Tanjant Fonksiyonu
+    Yuvarlama Fonksiyonları:
+        1- Yukarı Yuvarlama(ceil)
+        2- Aşağı Yuvarlama(floor)
+    Kombinasyon Bulma
+    İşaret Değiştirme: İki parametreden ikincinin işaretini birinciye verir.
+    Radyandan Dereceye Çevirme(degrees)
+    Fabs Fonksiyonu: integer ı float a floatı da aynen bırakır
+    Faktöriyel
+    FMOD: birincinin ikinciye bölümünden kalanı verir.(negatifler de dahil)
+    Gamma: Sayının bir eksiğinin faktöriyelini alır.
+    GCD: Verilen 2 sayının ebobunu veriyor.
+    Hypot(Pisagor): Verilen iki sayının karelerini toplar ve karekökünü alır.
+    İsinfinite: Girdiğiniz değerin sonsuz olup olmadığını açıklar.(isinf)
+    İsnan: Giriğiniz değer NaN(not a number) ise True, değilse false yanar.
+    İsqrt: Girdiğiniz kareköklü sayının tam sayı kısmını dömdürür(isqrt).
+    lgamma: Bu fonksiyon math.lgamma(45)==math.log(math.gamma(45)) bu şekilde tanımlar.
+    Logaritma: Logaritmayı hesaplar.(log(...) log(x, [base=math.e])
+    log10= Logaritma 10 tabanına göre hesaplar.    
+    log1p: Verilen sayının 1 fazlasının logaritma e tabanına göre hesaplar.
+    log2: Logaritma 2 tabanına göre hesaplar.
+    modf: Kesirli bir sayının tersini alır(çarpmaya göre).
+    perm: Permütasyon alır.perm(n, k=None, /)
+    pow: (x, y, /) x in y ye göre kuvvetini alır.
+    prod: Liste, tupple , range vb. içindeki elemanları çarpar. (liste = [1,2,3,4,5,6,8,9] prod = math.prod(liste) print(prod))
+    radians: Verilen x i radyana çevirir.
+    Hiperbolik Fonksiyonlar:(tanh,cosh,sinh,coth)
+    Trunc: int ile aynı işi yapar. Ondalıklı sayıyı integera çevirir.
+    (Varsayılan Değeler:  e = 2.718281828459045, pi = 3.141592653589793, tau = 6.283185307179586)
+""")
+toplama = 0
+çıkarma = -1
+çarpma = -2
+bölme = -3
+Cosinüs = 1
+Sinüs = 2
+Tanjant = 3
+Ceil = 4
+Floor = 5
+Kombinasyon = 6
+İşaret_Değiştirme = 7
+Degrees = 8
+Fabs = 9
+Faktöriyel = 10
+FMOD = 11
+Gamma = 12
+GCD = 13
+Hypot = 14
+İsqrt = 17
+lgamma = 18
+logaritma = 19
+log10 = 20
+log1p = 21
+log2 = 22
+modf = 23
+permütasyon = 24
+power = 25
+prod = 26
+radians = 27
+sinh = 28
+cosh = 29
+tanh = 30
+coth = 31
+trunc = 32
+işlem = int(input("İşlem Giriniz: "))
+if(işlem == "q"):
+    time.sleep(1)
+    print("Program Kapatılıyor.")
+elif(işlem == 0):
+    time.sleep(1)
+    print("Toplama İşlemi Seçildi ")
+    sayı1 = int(input("1. Sayı"))
+    sayı2 = int(input("2.sayı"))
+    print(" {} + {} = {} ".format(sayı1,sayı2,sayı1+sayı2))
+elif(işlem == -1):
+    time.sleep(1)
+    print("Çıkarma İşlemi Seçildi ")
+    sayı1 = int(input("1. Sayı"))
+    sayı2 = int(input("2.sayı"))
+    print(" {} - {} = {} ".format(sayı1,sayı2,sayı1-sayı2))
+elif(işlem == -2):
+    time.sleep(1)
+    print("Çarpma İşlemi Seçildi ")
+    sayı1 = int(input("1. Sayı"))
+    sayı2 = int(input("2.sayı"))
+    print(" {} x {} = {} ".format(sayı1,sayı2,sayı1*sayı2))
+elif(işlem == -3):
+    time.sleep(1)
+    print("Toplama İşlemi Seçildi ")
+    sayı1 = int(input("1. Sayı"))
+    sayı2 = int(input("2.sayı"))
+    print(" {} / {} = {} ".format(sayı1,sayı2,sayı1/sayı2))
+elif(işlem == 1):
+    time.sleep(1)
+    print("Cosinüs İşlemi Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.cos(sayı)
+    print(" {} sayısının Cosinüsü {}'dir.".format(sayı,x))
+elif(işlem == 2):
+    time.sleep(1)
+    print("Sinüs İşlemi Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.sin(sayı)
+    print(" {} sayısının Sinüsü {}'dir.".format(sayı,x))
+elif(işlem == 3):
+    time.sleep(1)
+    print("Tanjant İşlemi Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.tan(sayı)
+    print(" {} sayısının Tanjantı {}'dir.".format(sayı,x))
+elif(işlem == 4):
+    time.sleep(1)
+    print("Ceil İşlemi Seçildi - Yukarı Yuvarlama(>=) ")
+    sayı = int(input("Sayı: "))
+    x = math.ceil(sayı)
+    print(" {} sayısının Ceil'a göre çıktısı {}'dir.".format(sayı,x))
+elif(işlem == 5):
+    time.sleep(1)
+    print("Floor İşlemi Seçildi - Aşağı Yuvarlama(<=) ")
+    sayı = int(input("Sayı: "))
+    x = math.floor(sayı)
+    print(" {} sayısının Floor'a göre çıktısı {}'dir.".format(sayı,x))
+elif(işlem == 6):
+    time.sleep(1)
+    print("Kombinasyon İşlemi Seçildi ")
+    sayı1 = int(input("Sayı: "))
+    sayı2 = int(input("Sayı2: "))
+    x = math.comb(sayı1,sayı2)
+    print(" {} sayısının {} 'e göre  Kombinasyonu {}'dir.".format(sayı1,sayı2,x))
+elif (işlem == 7):
+    time.sleep(1)
+    print("İşaret Değiştirme İşlemi Seçildi  - 2. sayının işaretini 1. sayıya verir")
+    sayı1 = int(input("1. Sayı"))
+    sayı2 = int(input("2.sayı"))
+    x = math.copysign(sayı1,sayı2)
+    print(" {} ile {} sayısının copysign'a göre çıktısı = {} olur. ".format(sayı1, sayı2, x))
+elif(işlem == 8):
+    time.sleep(1)
+    print("Derece İşlemi Seçildi - Radyanı Derece Yapar ")
+    sayı = int(input("Sayı: "))
+    x = math.degrees(sayı)
+    print(" {} radyanının derece cinsinden değeri {}'dir.".format(sayı,x))
+elif(işlem == 9):
+    time.sleep(1)
+    print("Fabs İşlemi Seçildi - İntegerı Floata Çevirir ")
+    sayı = int(input("Sayı: "))
+    x = math.fabs(sayı)
+    print(" {} sayısının Fabs'a göre çıktısı {}'dir.".format(sayı,x))
+elif(işlem == 11):
+    time.sleep(1)
+    print("Kalanı Bulma Seçildi(Verdiğiniz birinci parametrenin ikinci parametreye bölümünden kalanı buluyor.(negatiflerde de dahil ")
+    sayı1 = int(input("Sayı1 : "))
+    sayı2 = int(input("Sayı 2: "))
+    x = math.fmod(sayı1,sayı2)
+    print(" {} sayısının Fmod'a göre {} sayısına bölümünden kalan {}'dir.".format(sayı1,sayı2,x))
+elif(işlem == 10 ):
+    time.sleep(1)
+    print("Faktöriyel Bulma Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.factorial(sayı)
+    print("{] sayısının faktöriyeli {} sayısıdır.".format(sayı,x))
+elif (işlem == 12):
+    time.sleep(1)
+    print("Gamma Fonksiyonu Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.gamma(sayı)
+    print(" {} sayısının Gamma'ya göre çıktısı {}'dir.".format(sayı, x))
+elif(işlem == 13):
+    time.sleep(1)
+    print("GCD İşlemi Seçildi - EBOB BULMA ")
+    sayı1 = int(input("Sayı: "))
+    sayı2 = int(input("Sayı: "))
+    x = math.gcd(sayı1,sayı2)
+    print(" {}  ile {} sayısının EBOB'u {}'dir.".format(sayı1,sayı2,x))
+elif(işlem == 14):
+    time.sleep(1)
+    print("Hypot İşlemi Seçildi - Hipotenüs Bulma ")
+    sayı1 = int(input("Sayı: "))
+    sayı2 = int(input("Sayı: "))
+    x = math.hypot(sayı1,sayı2)
+    print("{} ,  {} dik üçgeninin iki kenarına göre Hipotenüs {}'dir.".format(sayı1,sayı2,x))
+elif (işlem == 17):
+    time.sleep(1)
+    print("iqqrt Fonksiyonu Seçildi - Kökten Çıkardıktan Sonraki Tam Kısım ")
+    sayı = int(input("Sayı: "))
+    x = math.isqrt(sayı)
+    print(" {} sayısının tam kısmı {}'dir.".format(sayı, x))
+elif (işlem == 18):
+    time.sleep(1)
+    print("lgamma Fonksiyonu Seçildi - Gamma Fonksiyonuna göre değerini bulduktan sonra logaritmasını alır. ")
+    sayı = int(input("Sayı: "))
+    x = math.lgamma(sayı)
+    print(" {} sayısının lgamma'sı {}'dir.".format(sayı, x))
+elif (işlem == 19):
+    time.sleep(1)
+    print("Logaritma Fonksiyonu Seçildi ")
+    sayı = int(input("Sayı: "))
+    taban = int(input("Taban:"))
+    x = math.log(sayı,taban)
+    print(" {} sayısının logaritma {} tabanına göre logaritması  {}'dir.".format(sayı,taban, x))
+elif (işlem == 20):
+    time.sleep(1)
+    print("10 Tabanına Göre Logaritma Fonksiyonu Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.log10(sayı)
+    print(" {} sayısının 10 tabanına göre logaritması {}'dir.".format(sayı, x))
+elif (işlem == 21):
+    time.sleep(1)
+    print("Log1p Fonksiyonu Seçildi - Sayının bir fazlasının e tabanına göre logaritmasını hesaplar. ")
+    sayı = int(input("Sayı: "))
+    x = math.log1p(sayı)
+    print(" {} sayısının Log1p'ye göre çıktısı {}'dir.".format(sayı, x))
+elif (işlem == 22):
+    time.sleep(1)
+    print("2 tabanına göre Logaritma Fonksiyonu Seçildi ")
+    sayı = int(input("Sayı: "))
+    x = math.log2(sayı)
+    print(" {} sayısının Logaritma 2 tabanına göre değeri {}'dir.".format(sayı, x))
+elif (işlem == 23):
+    time.sleep(1)
+    print("modf fonksiyonu seçildi. Sayının kesirli ve tam kısımlarını döndürü. İşareti aynen korur. ")
+    sayı = int(input("Sayı: "))
+    x = math.modf(sayı)
+    print(" {} kesrinin çarpma işlemine göre ters hali {}'dir.".format(sayı, x))
+elif (işlem == 24):
+    time.sleep(1)
+    print("permütasyon fonksiyonu seçildi - birinci sayının ikinci sayıya göre permütasyonunu alır. ")
+    sayı1 = int(input("Sayı: "))
+    sayı2 = int(input("Sayı: "))
+    x = math.perm(sayı1,sayı2)
+    print(" {} sayısının {} sayısına göre permutasyonu {}'dir.".format(sayı1,sayı2,x))
+elif (işlem == 25):
+    time.sleep(1)
+    print("power fonksiyonu seçildi - birinci sayının ikinci sayıya göre kuvvetini alır. ")
+    sayı1 = int(input("Sayı: "))
+    sayı2 = int(input("Sayı: "))
+    x = math.pow(sayı1,sayı2)
+    print(" {} sayısının {} sayısına göre kuvveti {}'dir.".format(sayı1,sayı2,x))
+elif (işlem == 26):
+    time.sleep(1)
+    print("prod fonksiyonu seçildi - faktöriyele benzer ancak liste, tupple, range vb. de kullanılabilir. ")
+    veri = input("Girdi Giriniz: ")
+    if(type(veri) == list):
+        time.sleep(1)
+        print("Liste girdiniz.")
+        time.sleep(1)
+        x = math.prod(veri)
+        print("{} girdinin prod'a göre çıkışı {} olur.".format(veri,x))
+    elif(type(veri) == tuple):
+        time.sleep(1)
+        print("Tuple Girdiniz")
+        time.sleep(1)
+        x = math.prod(veri)
+        print("{} girdisinin prod'a göre çıkışı {} olur.".format(veri,x))
+    elif(type(veri) == range):
+        time.sleep(1)
+        print("Range bir değer girdiniz.")
+        time.sleep(1)
+        x = math.prod(veri)
+        print("{} girdisinin prod'a göre çıkışı {} olur.".format(veri,x))
+    elif(type(veri) == int):
+        time.sleep(1)
+        print("Tam Sayı Girdiniz.")
+        time.sleep(1)
+        x = math.prod(veri)
+        print("{} sayısnın prod'a göre çıkışı {} olur.".format(veri,x))
+    else:
+        time.sleep(1)
+        print("Geçersiz Sayı Girişi")
+        print("Programı Tekrar Bşlatınız..")
+elif (işlem == 27):
+    time.sleep(1)
+    print("Radians fonksiyonu seçildi - verilen açı ölçüsünü radyanta çevirir. ")
+    sayı = int(input("Sayı: "))
+    x = math.radians(sayı)
+    print("{} sayısının radyan cinsinden değeri {}dir".format(sayı,x))
+elif (işlem == 28):
+    time.sleep(1)
+    print("sinh fonksiyonu seçildi. ")
+    sayı = int(input("Sayı: "))
+    x = math.sinh(sayı)
+    print(" {} sinh fonksiyonuna göre çıktısı {}'dir.".format(sayı,x))
+elif (işlem == 29):
+    time.sleep(1)
+    print("cosh fonksiyonu seçildi. ")
+    sayı = int(input("Sayı: "))
+    x = math.cosh(sayı)
+    print(" {} cosh fonksiyonuna göre çıktısı {}'dir.".format(sayı,x))
+elif (işlem == 30):
+    time.sleep(1)
+    print("tanh fonksiyonu seçildi. ")
+    sayı = int(input("Sayı: "))
+    x = math.tanh(sayı)
+    print(" {} tanh fonksiyonuna göre çıktısı {}'dir.".format(sayı,x))
+elif (işlem == 31):
+    time.sleep(1)
+    print("coth fonksiyonu seçildi. ")
+    sayı = int(input("Sayı: "))
+    x = math.coth(sayı)
+    print(" {} coth fonksiyonuna göre çıktısı {}'dir.".format(sayı,x))
+elif (işlem == 32):
+    time.sleep(1)
+    print("trunc fonksiyonu seçildi. - int ile anı işi yapar. ")
+    sayı = int(input("Sayı: "))
+    x = math.trunc(sayı)
+    print(" {} trunc fonksiyonuna göre çıktısı {}'dir.".format(sayı,x))
